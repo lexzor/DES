@@ -1,0 +1,32 @@
+Este o metode de criptare a informatiai care a fost selectat ca standard federal in 1976, fiind utilizat pe plan international.
+
+Initial, acesta a fost controversat crezand ca este de fapt o portinta pent NSA.
+
+In ziua de astazi, acesta este considerat nesigur datorita cheii de 56 de biti considerata prea scurta, algoritmul fiind spart in mai putin de 24 de ore.
+In ultimii ani acesta a fost inlocuit cu Advanced Encryption Standard.
+
+Descriere:
+
+        Acesta este un algoritm care ia un sir de lungime fixa de biti de text si il transforma printr-o serie de operatii complexe intr-un sir de biti criptati de aceeasi lungime. In cazul
+DES, marimea blocului este de 64 de biti iar acesta foloseste o cheie unica pe care numai cei care cunosc aceasta cheie sa poata efectua decriptarea.
+Chiar daca cheia are 64 de biti, numai 56 dintre acestia sunt folositi propriu-zis de algoritm, 8 dintre ei fiind biti de paritate.
+*NOTE: Fiecare bit dintre cei 8 este un fel de bit de verificare pentru fiecare bit de la inceputul celor 8 octeti.
+
+        Data Encryption Standard foloseste schema Feistel, care este reprezentat prin 16 pasi (runde) identici de procesare.
+Exista si o permutare initiala si finala care se anuleaza una pe cealalta, fiind incluse pentru a facilita incarcarea si descarcarea blocurilor folosind tehnologia din 1970.
+
+In cadrul retelei Feistel, textul clar (plaintext) este impartit in doua jumatati. Fiecare runda a algoritmului DES implica aplicarea unei functii de substitutie si permutare pe una dintre jumatati, utilizand sub-cheia corespunzatoare.
+
+Fiecare runda consta in urmatoarele etape:
+
+1. Jumatatea dreapta a textului clar este extinsa utilizand tabela de expansiune (E-box).
+2. Rezultatul extinderii este combinat cu sub-cheia corespunzatoare rundei curente, utilizand operatia de XOR.
+3. Rezultatul este impartit in sase bucati de cate patru biti fiecare, numite blocuri de intrare pentru cutiile S (S-boxes).
+4. Fiecare bloc de intrare este introdus intr-o cutie S, unde se realizeaza o substitutie in functie de valorile din cutie.
+5. Rezultatele substitutiilor sunt combinate intr-o singura secventa de biti.
+6. Secventa rezultata este permutata utilizand cutia P (cutia de permutare).
+7. Rezultatul permutarii este combinat cu jumatatea stanga a textului clar utilizand operatia de XOR.
+8. Jumatatea stanga devine jumatatea dreapta a rundei urmatoare, iar jumatatea dreapta devine rezultatul operatiei XOR.
+
+Aceste etape sunt repetate de 16 ori, utilizand cele 16 sub-chei generate in procesul de generare a cheii. La finalul rundelor, jumatatea stanga si jumatatea dreapta sunt combinate si supuse unei permutari inverse, iar rezultatul final este textul criptat (ciphertext).
+Astfel, sub-cheile joaca un rol esential in procesul de criptare al algoritmului DES, asigurand confidentialitatea datelor prin aplicarea unor operatii complexe si repetate asupra textului clar.
